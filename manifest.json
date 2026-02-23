@@ -1,0 +1,88 @@
+{
+  "manifest_version": 3,
+  "name": "Zagyva",
+  "version": "1.0.0",
+  "description": "Hides 2026 Hungarian election-related articles and videos on popular news sites and YouTube.",
+  "permissions": ["storage", "activeTab"],
+  "host_permissions": [
+    "*://*.youtube.com/*",
+    "*://*.facebook.com/*",
+    "*://*.instagram.com/*",
+    "*://*.x.com/*",
+    "*://*.twitter.com/*",
+    "*://*.tiktok.com/*",
+    "*://*.linkedin.com/*",
+    "*://*.telex.hu/*",
+    "*://*.444.hu/*",
+    "*://*.24.hu/*",
+    "*://*.mandiner.hu/*",
+    "*://*.hvg.hu/*",
+    "*://*.index.hu/*",
+    "*://*.rtl.hu/*",
+    "*://*.portfolio.hu/*",
+    "*://*.magyarhang.org/*",
+    "*://*.origo.hu/*"
+  ],
+  "background": {
+    "service_worker": "src/background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.youtube.com/*",
+        "*://*.facebook.com/*",
+        "*://*.instagram.com/*",
+        "*://*.x.com/*",
+        "*://*.twitter.com/*",
+        "*://*.tiktok.com/*",
+        "*://*.linkedin.com/*",
+        "*://*.telex.hu/*",
+        "*://*.444.hu/*",
+        "*://*.24.hu/*",
+        "*://*.mandiner.hu/*",
+        "*://*.hvg.hu/*",
+        "*://*.index.hu/*",
+        "*://*.rtl.hu/*",
+        "*://*.portfolio.hu/*",
+        "*://*.magyarhang.org/*",
+        "*://*.origo.hu/*"
+      ],
+      "js": [
+        "src/keywords.js",
+        "src/matcher.js",
+        "src/storage.js",
+        "src/sites/youtube.js",
+        "src/sites/telex.js",
+        "src/sites/444.js",
+        "src/sites/24.js",
+        "src/sites/mandiner.js",
+        "src/sites/hvg.js",
+        "src/sites/index.js",
+        "src/sites/rtl.js",
+        "src/sites/portfolio.js",
+        "src/sites/magyarhang.js",
+        "src/sites/origo.js",
+        "src/sites/facebook.js",
+        "src/sites/instagram.js",
+        "src/sites/x.js",
+        "src/sites/tiktok.js",
+        "src/sites/linkedin.js",
+        "src/content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

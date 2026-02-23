@@ -1,0 +1,27 @@
+{
+  "name": "zagyva",
+  "version": "1.0.0",
+  "description": "A Chrome extension that hides 2026 Hungarian election-related articles and videos while browsing. Supports YouTube, Facebook and major Hungarian news portals, with per-site controls and a dynamically expandable keyword list.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test/matcher.test.js",
+    "test:e2e": "node test/e2e.test.js",
+    "screenshots": "node scripts/screenshots.js",
+    "build": "bash scripts/build.sh",
+    "publish": "node scripts/publish.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tamascsaba/zagyva.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tamascsaba/zagyva/issues"
+  },
+  "homepage": "https://github.com/tamascsaba/zagyva#readme",
+  "devDependencies": {
+    "puppeteer": "^24.37.5"
+  }
+}
